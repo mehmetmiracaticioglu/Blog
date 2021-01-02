@@ -19,7 +19,7 @@ namespace Blog.Configuration
                     configuration.GetConnectionString("DefaultConnection")));
             servicesCollection.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            servicesCollection.AddControllersWithViews();
+            servicesCollection.AddControllersWithViews().AddRazorRuntimeCompilation();
             servicesCollection.AddRazorPages();
         }
     }
